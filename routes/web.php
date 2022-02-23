@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('sendmsg', function(Request $req)
+Route::post('send-message', function(Request $req)
 {
     event
     (
@@ -30,4 +30,5 @@ Route::post('sendmsg', function(Request $req)
             $req->input('message')
         )
     );
+    return ["success" => true];
 });

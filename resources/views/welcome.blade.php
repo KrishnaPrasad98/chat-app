@@ -16,8 +16,8 @@
 
         <div id="messages"></div>
 
-        <form id="message_form">
-            <input type="text" name="message" id="message_input" placeholder="Message..."> 
+        <form id="messages_form">
+            <input type="text" name="message" id="messages_input" placeholder="Message..."> 
             <button type="submit" id="message_send">Send</button>
         </form>
     </div>
