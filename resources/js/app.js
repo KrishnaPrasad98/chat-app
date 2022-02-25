@@ -25,9 +25,6 @@ messages_form.addEventListener('submit',function (e)
         has_errors=true;
     }
 
-    if(has_errors){
-        return;
-    }
 
     const options= {
         method: 'post',
@@ -40,7 +37,7 @@ messages_form.addEventListener('submit',function (e)
 
     axios(options);
 } );
-
+ alert(test);
 window.Echo.channel('chat')
     .listen('.message', (e) => {
         messages_el.innerHTML+= "<h4 style='display:inline-block'>"+e.username+": </h4> <h6 style='display:inline-block'>"+e.message+"<h6><br><br>";

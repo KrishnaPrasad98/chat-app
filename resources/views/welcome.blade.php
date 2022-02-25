@@ -14,7 +14,14 @@
             <input type="text" name="username" id="username" placeholder="Enter your name"> <br><br>
         </header>
 
-        <div id="messages"></div>
+        <div id="messages"> 
+            @foreach ($dat as $item)
+                {{$item->username}}
+                {{$item->message}}
+            @endforeach
+        </div>
+
+        <h2>demo</h2>
 
         <form id="messages_form">
             <input type="text" name="message" id="messages_input" placeholder="Message..."> 

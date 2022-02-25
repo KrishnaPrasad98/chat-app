@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Events\message;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Models\msg;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,18 +18,16 @@ use Illuminate\Http\Response;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data= msg::all();
+    return view('welcome',['dat'=>$data]);
 });
 
 Route::post('send-message', function(Request $req)
 {
-    event
-    (
-        new Message
-        (
-            $req->input('username'),
-            $req->input('message')
-        )
-    );
+    event(new Message($req->input('username'),$req->input('message')));
+    $msg= new msg;
+    $msg->username=$req->username;
+    $msg->message=$req->messages;
+    $msg->save();
     return ["success" => true];
 });
