@@ -23,7 +23,7 @@
 
         <h2>demo</h2>
 
-        <h2>demo</h2>
+        <h3>demo</h3>
 
         <form id="messages_form">
             <input type="text" name="message" id="messages_input" placeholder="Message..."> 
